@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Ma — Design Director &amp; Brand Strategist</title>
+<meta name="description" content="Jeff Ma is a Design Director and Brand Strategist with 15+ years leading creative teams and shaping how complex ideas become brand, product, and executive communication — from Google, Warby Parker, and Anthropologie to IBM.">
+
+<!--
+  ============================================================
+  HOW TO ADD YOUR IMAGES
+  ============================================================
+  Every work sample below has a placeholder block that looks like:
+
+    <div class="media placeholder" style="--ar:16/9;">
+      <span class="ph-label">Safety Anthem Film — hero still, 16:9</span>
+    </div>
+
+  To swap in a real image, replace the placeholder block with:
+
+    <div class="media">
+      <img src="images/safety-anthem-film.jpg" alt="Still from the Safety Anthem Film showing ...">
+    </div>
+
+  Suggested folder structure once you're ready:
+    /index.html
+    /images/...   (export work samples here)
+
+  Recommended export sizes: 1600px wide for full-bleed case images,
+  1200px wide for grid thumbnails, JPG or WebP, optimized for web.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16171a;
+    --paper:#f7f5f1;
+    --paper-2:#efece5;
+    --line:#dcd8cf;
+    --muted:#6b6a66;
+    --accent:#b4502a;
+    --accent-ink:#7d3a1f;
+    --maxw:1180px;
+    --display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"ss01" 1;
+  }
+
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+
+  h1,h2,h3,h4{font-family:var(--display); font-weight:700; margin:0; letter-spacing:-0.02em;}
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,245,241,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px; max-width:var(--maxw); margin:0 auto;
+  }
+  .logo{font-family:var(--display); font-weight:700; font-size:1.15rem; letter-spacing:-0.02em; text-decoration:none;}
+  .navlinks{display:flex; gap:28px; list-style:none; margin:0; padding:0; font-size:0.92rem; font-weight:500;}
+  .navlinks a{text-decoration:none; color:var(--ink); opacity:0.75; transition:opacity 0.15s;}
+  .navlinks a:hover{opacity:1;}
+  .navlinks .cta{
+    border:1px solid var(--ink); border-radius:100px; padding:8px 18px; opacity:1;
+  }
+  .menu-toggle{display:none; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--ink);}
+
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed; top:64px; left:0; right:0; bottom:0;
+      background:var(--paper); flex-direction:column; padding:32px;
+      transform:translateY(-110%); transition:transform 0.25s ease; gap:22px; font-size:1.1rem;
+    }
+    .navlinks.open{transform:translateY(0);}
+    .menu-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:120px 0 90px; border-bottom:1px solid var(--line);}
+  .kicker{
+    font-family:var(--sans); text-transform:uppercase; letter-spacing:0.12em; font-size:0.78rem;
+    color:var(--accent-ink); font-weight:600; margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(2.6rem, 5.5vw, 4.4rem); line-height:1.02; letter-spacing:-0.03em; max-width:15ch;}
+  .hero .role{
+    font-family:var(--sans); font-weight:500; color:var(--muted);
+    font-size:clamp(1.1rem, 2vw, 1.4rem); letter-spacing:-0.01em; margin-top:14px;
+  }
+  .hero p.lede{
+    max-width:62ch; font-size:1.15rem; color:#3a3a37; margin-top:28px;
+  }
+  .hero-cta{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:100px;
+    text-decoration:none; font-size:0.95rem; font-weight:600; transition:all 0.15s;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--accent-ink);}
+  .btn-ghost{border:1px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:90px 0; border-bottom:1px solid var(--line);}
+  .section-head{max-width:56ch; margin-bottom:52px;}
+  .section-head .kicker{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.7rem, 3vw, 2.3rem);}
+  .section-head p{color:var(--muted); margin-top:14px; font-size:1.02rem;}
+  .org-badge{width:150px; height:auto; border-radius:8px; margin-top:22px; display:block;}
+
+  /* ---------- Approach ---------- */
+  .approach-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:36px;
+  }
+  .approach-card h3{font-size:1.15rem; margin-bottom:12px;}
+  .approach-card p{color:var(--muted); font-size:0.98rem;}
+  .approach-card .num{
+    font-family:var(--display); font-weight:700; color:var(--accent); font-size:1.3rem; display:block; margin-bottom:16px; letter-spacing:-0.02em;
+  }
+  @media (max-width:820px){.approach-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Work ---------- */
+  .filter-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:48px;}
+  .filter-btn{
+    border:1px solid var(--line); background:transparent; padding:8px 16px;
+    border-radius:100px; font-size:0.85rem; cursor:pointer; color:var(--muted);
+    font-family:var(--sans); transition:all 0.15s;
+  }
+  .filter-btn.active, .filter-btn:hover{border-color:var(--ink); color:var(--ink);}
+
+  .case-list{display:flex; flex-direction:column; gap:70px;}
+  .case{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
+  }
+  .case:nth-child(even){grid-template-columns:0.9fr 1.1fr;}
+  .case:nth-child(even) .case-media{order:2;}
+  .case:nth-child(even) .case-text{order:1;}
+
+  @media (max-width:820px){
+    .case, .case:nth-child(even){grid-template-columns:1fr;}
+    .case:nth-child(even) .case-media, .case:nth-child(even) .case-text{order:initial;}
+  }
+
+  .media{
+    border-radius:6px; overflow:hidden; border:1px solid var(--line); background:var(--paper-2);
+  }
+  .media img{width:100%; height:auto; display:block;}
+  .mini-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;}
+  .mini-grid .mg-item .media{aspect-ratio:3/4;}
+  .mini-grid .mg-item .media img{width:100%; height:100%; object-fit:cover;}
+  .mini-grid .mg-item figcaption{
+    font-size:0.72rem; color:var(--muted); margin-top:8px; text-align:center; font-weight:600;
+  }
+  @media (max-width:520px){
+    .mini-grid{grid-template-columns:1fr 1fr;}
+    .mini-grid .mg-item:first-child{grid-column:1 / -1;}
+  }
+  .media.placeholder{
+    aspect-ratio:var(--ar, 4/3);
+    display:flex; align-items:center; justify-content:center;
+    background:
+      repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 10px, #e6e2d8 10px, #e6e2d8 20px);
+    text-align:center; padding:20px;
+  }
+  .ph-label{font-size:0.8rem; color:var(--muted); font-weight:600; max-width:22ch;}
+
+  .case-tag{
+    display:inline-block; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--accent-ink); font-weight:700; margin-bottom:14px;
+  }
+  .case h3{font-size:1.5rem; margin-bottom:6px;}
+  .case .org{color:var(--muted); font-size:0.92rem; margin-bottom:16px;}
+  .case p.desc{color:#3a3a37; font-size:0.98rem; margin-bottom:16px;}
+  .case ul.impact{list-style:none; margin:0; padding:0; font-size:0.9rem; color:var(--muted);}
+  .case ul.impact li{padding-left:18px; position:relative; margin-bottom:6px;}
+  .case ul.impact li:before{content:"—"; position:absolute; left:0; color:var(--accent);}
+
+  /* ---------- Archive grid ---------- */
+  .archive-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;
+  }
+  @media (max-width:820px){.archive-grid{grid-template-columns:repeat(2, 1fr);}}
+  @media (max-width:520px){.archive-grid{grid-template-columns:1fr;}}
+  .archive-item .media{margin-bottom:14px;}
+  .archive-item h4{font-size:0.98rem; margin-bottom:3px;}
+  .archive-item .org{color:var(--muted); font-size:0.85rem;}
+
+  /* ---------- Experience ---------- */
+  .timeline{display:flex; flex-direction:column;}
+  .tl-row{
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .tl-row:last-child{border-bottom:1px solid var(--line);}
+  .tl-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .tl-title{font-size:1.05rem;}
+  .tl-role{font-weight:700;}
+  .tl-dot{color:var(--line); margin:0 8px;}
+  .tl-org{color:var(--accent-ink); font-weight:600;}
+  .tl-years{
+    color:var(--muted); font-size:0.74rem; font-weight:500;
+    letter-spacing:0.03em; white-space:nowrap; opacity:0.7;
+  }
+  .tl-desc{color:var(--muted); font-size:0.92rem; margin-top:8px; max-width:62ch;}
+
+  /* ---------- Contact ---------- */
+  .contact{border-bottom:none; text-align:left;}
+  .contact-inner{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:32px;
+  }
+  .contact h2{font-size:clamp(2rem, 4vw, 3rem); max-width:14ch;}
+  .contact-links{display:flex; flex-direction:column; gap:10px; font-size:1.05rem;}
+  .contact-links a{text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:2px;}
+  .contact-links a:hover{border-color:var(--ink);}
+
+  footer{padding:32px 0; color:var(--muted); font-size:0.85rem;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="logo" href="#top">Jeff Ma</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#archive">Archive</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" style="border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="kicker">Design Director · Brand &amp; Creative Strategy</div>
+      <h1>Jeff Ma</h1>
+      <div class="role">I translate what experts know into the clarity that decisions, products, and people require.</div>
+      <p class="lede">
+        For 15+ years I've led design and brand work for audiences ranging from a
+        board of directors to millions of product users — building the creative
+        strategy, team, and craft that turns complex, high-stakes ideas into
+        communication people actually understand and trust. Most recently
+        Creative Director at Google, Privacy, Safety &amp; Security — currently
+        taking on select independent projects while I explore full-time Brand
+        Director and Design Director roles.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See selected work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== APPROACH ===================== -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How I lead</div>
+        <h2>Brand strategy and design leadership, built for high-stakes rooms</h2>
+        <p>
+          The work below spans two disciplines that, in practice, are one job:
+          building a brand's point of view, and building the team and system that
+          expresses it consistently — to executives, regulators, and the public alike.
+        </p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card">
+          <span class="num">01</span>
+          <h3>Translate expertise into narrative</h3>
+          <p>
+            I work directly with engineers, policy leads, and security researchers
+            to turn deep technical and legal complexity — AI risk frameworks,
+            data protection regulation, cybersecurity posture — into visuals and
+            stories that land with non-expert audiences.
+          </p>
+        </div>
+        <div class="approach-card">
+          <span class="num">02</span>
+          <h3>Lead teams and agency partners</h3>
+          <p>
+            I've managed embedded designers, contractors, and agency partners
+            across simultaneous high-visibility engagements, setting creative
+            direction while staying accountable for craft, consistency, and
+            deadlines under real pressure.
+          </p>
+        </div>
+        <div class="approach-card">
+          <span class="num">03</span>
+          <h3>Build for the room it's presented in</h3>
+          <p>
+            From a boardroom briefing to a public-facing campaign, I design for
+            the specific audience and stakes of the moment — knowing that a
+            slide for the Alphabet Board and a film for millions of users
+            require entirely different instincts, built on the same discipline.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SELECTED WORK ===================== -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Selected Work</div>
+        <h2>Recent brand strategy &amp; design direction</h2>
+        <p>
+          A selection of strategic and creative direction work from Google's
+          Privacy, Safety &amp; Security organization, 2021–present.
+        </p>
+        <img src="images/pss-brand-mark.png" alt="Privacy, Safety & Security — the Google organization this work was created within." class="org-badge">
+      </div>
+
+      <div class="case-list">
+
+        <!-- Case 1 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media">
+              <img src="images/safety-anthem-film.jpg" alt="Curated visual reference board of footage and photography used to develop the Safety Anthem Film, including street scenes, product moments, and cityscapes.">
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Brand Film · Creative Direction</span>
+            <h3>Safety Anthem Film</h3>
+            <div class="org">Google · Privacy, Safety &amp; Security</div>
+            <p class="desc">
+              Concepted and directed a motion graphics film built to establish
+              external awareness of Google's safety leadership — a brand-level
+              statement piece for an audience that rarely sees the work behind
+              the word "safety."
+            </p>
+            <ul class="impact">
+              <li>Creative direction, concept development, and cross-functional sign-off</li>
+              <li>Positioned as a flagship brand asset for the safety narrative</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 2 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media" style="background:#fff; display:flex; align-items:center; justify-content:center; padding:12%;">
+              <img src="images/safer-with-google-logo.png" alt="Safer with Google Summit brand mark, part of the broader Safer with Google brand identity applied across the summit and in-product moments." style="max-width:70%;">
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Brand Strategy</span>
+            <h3>Safer with Google — Brand &amp; In-Product Strategy</h3>
+            <div class="org">Google · Brand Identity, Summit &amp; Product Strategy</div>
+            <p class="desc">
+              Developed the "Safer with Google" brand identity and applied it
+              across the initiative's flagship summit and in-product moments —
+              designing and presenting strategic brand opportunities directly to
+              product managers and marketers across five major product surfaces
+              (Gemini, Search, Chrome, Google Account, Maps) to increase adoption
+              of Personal Intelligence features.
+            </p>
+            <ul class="impact">
+              <li>End-to-end brand identity, from logo mark to summit experience</li>
+              <li>Cross-product strategy spanning five Google product teams</li>
+              <li>Direct stakeholder presentation and buy-in at the PM/PMM level</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 3 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media">
+              <img src="images/saif-red-teams.jpg" alt="Cover of a Google report on the role of red teams in securing AI systems, part of the Secure AI Framework body of work.">
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Systems &amp; Information Design</span>
+            <h3>Secure AI Framework (SAIF) Risk Map</h3>
+            <div class="org">Google · Coalition for Secure AI (CoSAI)</div>
+            <p class="desc">
+              Visualized, with technical accuracy, Google's SAIF Risk Map — a
+              guide used by Google product teams and industry organizations to
+              navigate AI security risks and controls, and adopted as a
+              foundational framework for CoSAI, an open-source, cross-industry
+              consortium.
+            </p>
+            <ul class="impact">
+              <li>Technical accuracy validated with security engineering teams</li>
+              <li>Adopted as reference framework across an industry consortium</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 4 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media placeholder" style="--ar:16/9;">
+              <span class="ph-label">AI Safety Film (2024) — hero still, 16:9</span>
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Brand Film · Creative Direction</span>
+            <h3>AI Safety Film</h3>
+            <div class="org">Google · YouTube / ai.google · 2024</div>
+            <p class="desc">
+              Concepted and directed a film on strengthening digital security
+              with AI, published on YouTube and ai.google — translating
+              technical AI safety work into a public-facing brand statement.
+            </p>
+            <ul class="impact">
+              <li>Public distribution on YouTube and ai.google</li>
+              <li>End-to-end creative direction, from concept to final cut</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 5 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media placeholder" style="--ar:4/3;">
+              <span class="ph-label">Cyber Defense Summit 2025 — keynote deck spread</span>
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Executive Communications</span>
+            <h3>Cyber Defense Summit 2025</h3>
+            <div class="org">Mandiant &amp; Google Threat Intelligence</div>
+            <p class="desc">
+              Developed and designed a VP keynote for an exclusive Mandiant and
+              Google Threat Intelligence event, crafted for a room of elite
+              security professionals — where credibility depends on precision,
+              not polish for polish's sake.
+            </p>
+            <ul class="impact">
+              <li>VP-level keynote, invitation-only industry audience</li>
+              <li>Design built to hold up under expert scrutiny</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 6 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media placeholder" style="--ar:4/3;">
+              <span class="ph-label">Alphabet Board reporting — confidential, sample layout</span>
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Executive Communications</span>
+            <h3>Alphabet Board of Directors Reporting</h3>
+            <div class="org">Confidential</div>
+            <p class="desc">
+              Distilled complex, critical cybersecurity posture data into
+              reporting for Alphabet's Audit and Compliance Committee — one of
+              the highest-stakes audiences a design decision can face, where
+              clarity has direct governance consequences.
+            </p>
+            <ul class="impact">
+              <li>Board and Audit and Compliance Committee-level audience</li>
+              <li>Details confidential; available to discuss in conversation</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 7 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="media placeholder" style="--ar:16/9;">
+              <span class="ph-label">Data Transfer Project explainer — video still, 16:9</span>
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Brand Film · Cross-Company Collaboration</span>
+            <h3>Data Transfer Project Explainer</h3>
+            <div class="org">Amazon · Apple · Google · Meta</div>
+            <p class="desc">
+              Translated an open-source collaboration among four competing
+              companies — supporting safe, secure service-to-service data
+              portability — into a single explainer video legible to a general
+              audience, now known as the Data Transfer Initiative.
+            </p>
+            <ul class="impact">
+              <li>Cross-company alignment across four organizations</li>
+              <li>Complex open-source initiative distilled into one clear narrative</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Case 8 -->
+        <article class="case">
+          <div class="case-media">
+            <div class="mini-grid">
+              <figure class="mg-item">
+                <div class="media">
+                  <img src="images/fog-of-war-cover.jpg" alt="Cover of 'Fog of War: How the Ukraine Conflict Transformed the Cyber Threat Landscape,' a Google security report.">
+                </div>
+                <figcaption>Fog of War</figcaption>
+              </figure>
+              <figure class="mg-item">
+                <div class="media">
+                  <img src="images/defenders-dilemma-cover.jpg" alt="Cover of 'Secure, Empower, Advance: How AI Can Reverse the Defender's Dilemma,' a Google security report.">
+                </div>
+                <figcaption>Defender's Dilemma</figcaption>
+              </figure>
+              <figure class="mg-item">
+                <div class="media">
+                  <img src="images/buying-spying-infographic.jpg" alt="Editorial infographic illustrating a commercial spyware infection chain, from a Google report on commercial surveillance vendors.">
+                </div>
+                <figcaption>Buying Spying</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="case-text">
+            <span class="case-tag">Editorial &amp; Content Design</span>
+            <h3>Security Analysis &amp; Reporting</h3>
+            <div class="org">Google</div>
+            <p class="desc">
+              Editorial design direction for a series of public analyses on
+              geopolitical and commercial security topics, including
+              <em>Fog of War: Invasion of Ukraine</em>,
+              <em>Secure, Empower, Advance: Defender's Dilemma</em>, and
+              <em>Buying Spying: Commercial Surveillance Vendors</em>.
+            </p>
+            <ul class="impact">
+              <li>Public blog series on sensitive geopolitical security topics</li>
+              <li>Consistent editorial system across a recurring series</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARCHIVE ===================== -->
+  <section id="archive">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Archive, 2005–2016</div>
+        <h2>Earlier brand &amp; retail design work</h2>
+        <p>
+          Before leading design for global security and privacy communications,
+          I built brand identity and digital product experience for retail and
+          consumer brands — the foundation for how I think about brand systems today.
+        </p>
+      </div>
+
+      <div class="archive-grid">
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Warby Parker — product page</span>
+          </div>
+          <h4>Product Page</h4>
+          <div class="org">warbyparker.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Warby Parker — checkout flow</span>
+          </div>
+          <h4>Checkout</h4>
+          <div class="org">warbyparker.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Warby Parker — typography system</span>
+          </div>
+          <h4>Typography</h4>
+          <div class="org">warbyparker.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Warby Parker — 2013 Annual Report spread</span>
+          </div>
+          <h4>Annual Report — 2013</h4>
+          <div class="org">warbyparker.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Warby Parker — 2014 Annual Report spread</span>
+          </div>
+          <h4>Annual Report — 2014</h4>
+          <div class="org">warbyparker.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — Garden Party Outfits photo art direction</span>
+          </div>
+          <h4>Photo Art Direction — Garden Party Outfits</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — Waist Down feature</span>
+          </div>
+          <h4>Photo Art Direction — Waist Down Feature</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — design direction spread</span>
+          </div>
+          <h4>Design Direction</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — photo art direction</span>
+          </div>
+          <h4>Photo Art Direction</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — curated collection wireframes</span>
+          </div>
+          <h4>Curated Collection Wireframes</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — design implementation and explorations</span>
+          </div>
+          <h4>Design Implementation &amp; Explorations</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Anthropologie — The Anthropologist design direction</span>
+          </div>
+          <h4>Design Direction — The Anthropologist</h4>
+          <div class="org">anthropologie.com</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — hand-drawn compositions</span>
+          </div>
+          <h4>Hand-Drawn Graphics &amp; Compositions</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — vector art</span>
+          </div>
+          <h4>Vector Art</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — appliqué technique</span>
+          </div>
+          <h4>Appliqué Technique</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — R&amp;D prototype</span>
+          </div>
+          <h4>Research &amp; Development Prototype</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — appliqué fleece presentation</span>
+          </div>
+          <h4>Appliqué Fleece Presentation</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">Apparel graphics — flagship store extended logo</span>
+          </div>
+          <h4>Flagship Store — Extended Logo Presentation</h4>
+          <div class="org">Apparel Graphics</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">IBM Centennial — brand expression, spread 1</span>
+          </div>
+          <h4>Brand Expression</h4>
+          <div class="org">IBM Centennial</div>
+        </div>
+
+        <div class="archive-item">
+          <div class="media placeholder" style="--ar:4/3;">
+            <span class="ph-label">IBM Centennial — brand expression, spread 2</span>
+          </div>
+          <h4>Brand Expression</h4>
+          <div class="org">IBM Centennial</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Experience</div>
+        <h2>15+ years leading brand and design work</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Independent Creative &amp; Brand Director</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Freelance</span>
+            </div>
+            <div class="tl-years">2026 — Present</div>
+          </div>
+          <div class="tl-desc">
+            Providing creative direction and brand strategy for select
+            clients on a project basis, alongside a search for a full-time
+            Brand Director or Design Director role.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Creative Director</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Google, Privacy, Safety &amp; Security</span>
+            </div>
+            <div class="tl-years">2024 — 2026</div>
+          </div>
+          <div class="tl-desc">
+            High-level strategic function managing designers embedded across
+            teams, agency partners, and internal stakeholders — shaping how
+            Google communicates its commitment to privacy, safety, and
+            security to internal and external audiences.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Design Manager</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Google, Privacy, Safety &amp; Security</span>
+            </div>
+            <div class="tl-years">2021 — 2024</div>
+          </div>
+          <div class="tl-desc">
+            Led a team of visual designers supporting critical narratives and
+            high-impact engagements, including the Digital Services Act,
+            Google-wide security posture, Munich Security Conference, and
+            Safer with Google Summit.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Google</span>
+            </div>
+            <div class="tl-years">2017 — 2020</div>
+          </div>
+          <div class="tl-desc">
+            Directed contract designers across cross-functional, cross-product
+            collaborations to create external communications that drove
+            changes to products and company-wide impact.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Contract Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Google</span>
+            </div>
+            <div class="tl-years">2017 — 2019</div>
+          </div>
+          <div class="tl-desc">
+            Designed privacy concept visualizations to inform critical
+            CEO-level decision-making and illustrate how Google could best
+            prepare for the implementation of the GDPR.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Owner / Creative Director</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">MAD Worldwide</span>
+            </div>
+            <div class="tl-years">2016 — 2020</div>
+          </div>
+          <div class="tl-desc">
+            Brand identities, digital product features, and print / digital
+            marketing for independent clients.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Senior Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Warby Parker</span>
+            </div>
+            <div class="tl-years">2014 — 2016</div>
+          </div>
+          <div class="tl-desc">
+            Led the design team and online experience; established and
+            maintained digital and print design guidelines and designed
+            internal applications.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Contract Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Apple</span>
+            </div>
+            <div class="tl-years">2013 — 2014</div>
+          </div>
+          <div class="tl-desc">
+            Designed the user interface for an internal web application used
+            by developers, content creators, and content managers.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Interactive Design Director</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Anthropologie</span>
+            </div>
+            <div class="tl-years">2011 — 2013</div>
+          </div>
+          <div class="tl-desc">
+            Managed visual/UX designers and front-end engineers developing
+            anthropologie.com — browsing, buying, style advice,
+            personalization, and account functionality.
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Senior Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">VSA Partners</span>
+            </div>
+            <div class="tl-years">2009 — 2011</div>
+          </div>
+          <div class="tl-desc">Concepting and design for IBM, including the IBM Centennial brand expression.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-head">
+            <div class="tl-title">
+              <span class="tl-role">Designer</span>
+              <span class="tl-dot">·</span>
+              <span class="tl-org">Hollister Co. (Abercrombie &amp; Fitch)</span>
+            </div>
+            <div class="tl-years">2005 — 2009</div>
+          </div>
+          <div class="tl-desc">Apparel graphics, brand execution, and print design.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <h2>Let's talk about your next Brand Director or Design Director hire.</h2>
+        <div class="contact-links">
+          <a href="mailto:majeff@gmail.com">majeff@gmail.com</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn — add your profile URL</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jeff Ma</span>
+    <span>Design Director · Chicago</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
